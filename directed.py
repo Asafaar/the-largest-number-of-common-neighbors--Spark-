@@ -42,7 +42,8 @@ spark = SparkSession.builder \
 spark.sparkContext.setLogLevel("WARN")
 
 # === Parameters ===
-file_path = "edges_1m.csv"
+data_dir = "data"
+
 top_n = 10
 
 # === Timer total ===
@@ -50,7 +51,7 @@ t_total_start = time.time()
 
 # === Step 1: Load CSV efficiently ===
 t1 = time.time()
-edges = spark.read.option("header", "true").csv(file_path)
+edges = spark.read.option("header", "true").csv(data_dir)
 edges = edges.select(col("src").cast("int"), col("dst").cast("int"))
 edges = edges.filter(col("src").isNotNull() & col("dst").isNotNull())
 
