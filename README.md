@@ -53,9 +53,6 @@ Where E is the total number of edges.
 ## 📂 File Structure
 
 - `edges_1m.csv` – Input graph edge list (columns: `src`, `dst`)
-- `benchmark_log.csv` – Automatically generated performance logs
-- `top_common_neighbors_YYYYMMDD-HHMMSS.csv` – Output results file
-
 ---
 
 ## 📄 .env Configuration
